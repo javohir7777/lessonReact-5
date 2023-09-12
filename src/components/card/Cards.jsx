@@ -1,6 +1,6 @@
 import React from "react";
 
-const Cards = ({ id, name, debt, phone }) => {
+const Cards = ({ id, name, debt, phone, editDebt }) => {
   return (
     <div className="card p-3">
       <div className="card-body d-flex aligen-items-center justify-content-between bg-light">
@@ -8,11 +8,15 @@ const Cards = ({ id, name, debt, phone }) => {
         <p className="my-1">{debt}</p>
         <p className="my-1">{phone}</p>
         <div>
-          <button type="button" class="btn btn-success me-3">
-            Success
+          <button
+            onClick={() => editDebt(id)}
+            type="button"
+            class="btn btn-success me-3"
+          >
+            Edit
           </button>
           <button type="button" class="btn btn-danger">
-            Danger
+            Delete
           </button>
         </div>
       </div>
